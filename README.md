@@ -6,9 +6,9 @@
 
 ```bash
 # install dependencies
-npm install
+cnpm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at 192.168.0.124:8080
 npm run dev
 
 # build for production with minification
@@ -53,3 +53,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   - 2.1 "dev": "webpack-dev-server --host 192.168.0.124 --inline --progress --config build/webpack.dev.conf.js",(--host ip 设置为 WiFi 的 ip)
   - 3.  手机与电脑通过其他工具连接上
   - 4.  手机浏览器中输入项目的地址(http://+ip+port)即可
+
+## 存疑中心
+
+- 使用 mui 中的初始化，因为是严格模式，会报错？？点击数量加号和减号按钮不灵活
+- 在购物车页面中，同时显示多条购物车中的商品，使用 json-server 不能读取多条商品信息
+-
