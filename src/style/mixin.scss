@@ -1,0 +1,206 @@
+$designWidth: 750;
+$color1: #10903d;
+$color2: #246e5a;
+$header_bg: #29db67;
+$num_color: #000;
+$color_per: #757575;
+$h2_color: #fff;
+$color7: #fafafa;
+$border_color1: #e8e8e8;
+$color9: #f00;
+$color8: #ff5353;
+$color0: #00a2eb;
+
+@function px2rem($px) {
+  @return $px * 320 / $designWidth/20 + rem;
+}
+
+@mixin boder1px($bd-color: #ccc, $top: 1, $right: 0, $bottom: 1, $left: 0) {
+  content: ' ';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border: 1px solid $bd-color;
+  left: 0;
+  top: 0;
+  transform: scale(0.5, 0.5);
+  transform-origin: left top;
+  box-sizing: border-box;
+  @if $top != 1 {
+    border-top: none;
+  }
+  @if $right != 1 {
+    border-right: none;
+  }
+  @if $bottom != 1 {
+    border-bottom: none;
+  }
+  @if $left != 1 {
+    border-left: none;
+  }
+}
+
+@mixin header {
+  height: px2rem(152);
+  text-align: center;
+  font-size: px2rem(36);
+  color: $h2_color;
+  background: $header_bg;
+}
+
+@mixin index_item_box_le_ri {
+  position: absolute;
+  top: 2px;
+  width: px2rem(28);
+  height: px2rem(810);
+  background: $h2_color;
+}
+
+@mixin optionshop_hmfbc {
+  height: px2rem(110);
+  line-height: px2rem(110);
+  margin-left: px2rem(28);
+  font-size: px2rem(30);
+  background: $h2_color;
+  color: $num_color;
+  border-bottom: px2rem(1) solid $border_color1;
+}
+
+// 提交页面与选择页面的公共样式
+@mixin submit_options_shops {
+  box-sizing: border-box;
+  padding: px2rem(28);
+  width: px2rem(750);
+  overflow: hidden;
+  border: px2rem(1) solid $border_color1;
+}
+
+@mixin submit_options_shops_img_wrap {
+  float: left;
+  width: px2rem(124);
+  height: px2rem(124);
+  border: px2rem(1) solid $border_color1;
+  border-radius: px2rem(5);
+  margin-right: px2rem(28);
+}
+
+@mixin submit_options_shops_shop_introduce {
+  float: left;
+  width: px2rem(535);
+  height: px2rem(124);
+  // background: $border_color1;
+}
+
+@mixin submit_options_shops_shop_title {
+  font-size: px2rem(28);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $num_color;
+}
+
+@mixin submit_options_shops_intro {
+  font-size: px2rem(24);
+  margin-bottom: px2rem(8);
+  color: $color_per;
+}
+
+@mixin submit_fix {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: px2rem(110);
+  line-height: px2rem(110);
+  width: px2rem(750);
+  font-size: px2rem(28);
+  border-top: px2rem(1) solid $border_color1;
+}
+
+// 确认按钮
+@mixin submit_fix_btn {
+  float: right;
+  height: px2rem(70);
+  line-height: px2rem(70);
+  width: px2rem(150);
+  border-radius: px2rem(5);
+  margin-top: px2rem(20);
+  margin-right: px2rem(28);
+  font-size: px2rem(30);
+  text-align: center;
+  color: $h2_color;
+  background: $color1;
+}
+
+// 小圆圈
+@mixin sma_radio {
+  float: left;
+  width: px2rem(40);
+  height: px2rem(40);
+  margin-right: px2rem(20);
+  vertical-align: middle;
+  border-radius: 50%;
+  border: px2rem(28) solid red;
+  background-color: yellowgreen;
+}
+
+// suc_sta页面中的
+@mixin suc_sta_title($h: px2rem(84), $f: px2rem(28)) {
+  box-sizing: border-box;
+  height: $h;
+  line-height: $h;
+  width: px2rem(750);
+  padding: 0 px2rem(28);
+  border-bottom: px2rem(1) solid $border_color1;
+  font-size: $f;
+  color: $num_color;
+  background: $color7;
+}
+
+@mixin suc_sta_shop_hd($h: px2rem(66), $f: px2rem(24)) {
+  display: flex;
+  text-align: center;
+  height: $h;
+  line-height: $h;
+  width: px2rem(750);
+  border-bottom: px2rem(1) solid $border_color1;
+  font-size: $f;
+  text-align: center;
+  color: $num_color;
+}
+
+// 底部绝对定位110高度
+@mixin suc_sta_fix($f: px2rem(24), $c: center) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: px2rem(750);
+  height: px2rem(110);
+  line-height: px2rem(110);
+  padding: 0 px2rem(28);
+  font-size: $f;
+  text-align: $c;
+  background: $h2_color;
+  color: $num_color;
+  border-top: px2rem(1) solid $border_color1;
+}
+// 订单状态中的弹性盒子
+@mixin static_flex_par($w: px2rem(750)) {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  width: $w;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+@mixin static_flex_chi($h: px2rem(308), $f: px2rem(28)) {
+  box-sizing: border-box;
+  height: $h;
+  width: px2rem(250);
+  border-right: px2rem(1) solid $border_color1;
+  border-bottom: px2rem(1) solid $border_color1;
+  font-size: $f;
+  text-align: center;
+  color: $color_per;
+}
